@@ -1,10 +1,36 @@
 # AngularCrypt
 
+This is a demo how teach Angular some crypto tricks with X.509 certificates on application layer.
+
+## Status
+
+**pre Alpha** It does nothing more than creating und showing private key and CSR in browser for now.
+
+## Version
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
-## Development server
+# Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files and will create some text fields with a random string, a private key and a PKCS#10 certificate request.
+
+# Angular Development Process
+
+This POC will not interfere typical Angular development process.
+
+## What is different or new?
+
+`./src/app/lib` contains crypto workhorse, everything else is Angular specific stuff.
+
+`crypt.service.ts` is interface to crypto tools from ./lib and provides an Angular service to app.
+
+## Requirements
+
+add **"allowJs": true** to tsconfig.json 
+
+## Know Issues
+
+asn1js needs CommonJS, which **may** yield into minification trouble. See https://angular.io/guide/build#configuring-commonjs-dependencies for further information.
 
 ## Code scaffolding
 
