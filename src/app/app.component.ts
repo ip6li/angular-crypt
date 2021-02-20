@@ -16,7 +16,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   config: Config[];
 
 
-  constructor(private x509: CryptService) {
+  constructor(public x509: CryptService) {
     this.config = [];
   }
 
