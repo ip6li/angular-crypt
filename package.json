@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "setupWebdriver": "node ./node_modules/.bin/webdriver-manager update --versions.chrome=$(rpm -q --qf \"%{VERSION}\" chromium)",
+    "e2e": "npm run setupWebdriver && ng e2e ---webdriver-update=false"
   },
   "private": true,
   "dependencies": {
